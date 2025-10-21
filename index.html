@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Developer Portfolio — Your Name</title>
+    <meta name="description" content="Personal portfolio of a web developer. Built with HTML, TailwindCSS and JavaScript." />
+    <!-- Tailwind CSS CDN (enable class-based dark mode) -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {},
+        }
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* small custom styles */
+      :root { --accent: #7c3aed; }
+      .gradient { background-image: linear-gradient(90deg, rgba(124,58,237,0.15), rgba(99,102,241,0.08)); }
+    </style>
+  </head>
+  <body class="bg-white text-slate-800 antialiased">
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/95 backdrop-blur-sm border-b dark:border-slate-700">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="#home" class="flex items-center gap-3 font-semibold text-lg text-slate-900 dark:text-slate-100">
+            <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="24" height="24" rx="4" fill="url(#g)" />
+              <defs>
+                <linearGradient id="g" x1="0" x2="1">
+                  <stop offset="0" stop-color="#7c3aed" />
+                  <stop offset="1" stop-color="#6366f1" />
+                </linearGradient>
+              </defs>
+            </svg>
+            YourName
+          </a>
+
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#about" class="text-slate-900 dark:text-slate-100 hover:text-indigo-600 dark:hover:text-indigo-400">About</a>
+            <a href="#projects" class="text-slate-900 dark:text-slate-100 hover:text-indigo-600 dark:hover:text-indigo-400">Projects</a>
+            <a href="#skills" class="text-slate-900 dark:text-slate-100 hover:text-indigo-600 dark:hover:text-indigo-400">Skills</a>
+            <a href="#contact" class="text-slate-900 dark:text-slate-100 hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a>
+          </nav>
+
+          <div class="flex items-center gap-3">
+            <!-- Theme toggle -->
+            <button id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark" class="hidden md:inline-flex p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700">
+              <svg id="themeIcon" class="w-5 h-5 text-slate-700 dark:text-slate-200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- icon set by JS -->
+              </svg>
+            </button>
+
+            <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden hidden border-t dark:border-slate-700 dark:bg-slate-900/80">
+        <div class="px-4 py-3 flex flex-col gap-2">
+          <a href="#about" class="py-2 text-slate-800 dark:text-slate-200">About</a>
+          <a href="#projects" class="py-2 text-slate-800 dark:text-slate-200">Projects</a>
+          <a href="#skills" class="py-2 text-slate-800 dark:text-slate-200">Skills</a>
+          <a href="#contact" class="py-2 text-slate-800 dark:text-slate-200">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- HERO -->
+      <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h1 class="text-4xl sm:text-3xl font-extrabold leading-tight">Hi, I'm Tanmoy Mridha — a Web Developer</h1>
+            <p class="mt-4 text-slate-600 max-w-xl">I build accessible, performant, and delightful web experiences using modern frontend tooling. I specialize in JavaScript, CSS and React.</p>
+
+            <div class="mt-6 flex items-center gap-4">
+              <a href="#projects" class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-md shadow hover:bg-indigo-700">See projects</a>
+              <a href="#contact" class="inline-flex items-center px-4 py-2 border border-slate-200 rounded-md hover:bg-slate-50">Get in touch</a>
+            </div>
+
+            <div class="mt-8 text-sm text-slate-500">Currently: Open to freelance and full-time roles.</div>
+          </div>
+
+          <div class="order-first md:order-last">
+            <div class="w-full h-64 sm:h-80 md:h-64 rounded-2xl overflow-hidden gradient flex items-center justify-center">
+              <img src="assets/images/photo_2025-09-17_23-19-19.jpg" alt="profile" class="w-48 h-48 rounded-full object-cover shadow-lg border-4 border-white/60"/>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="border-t">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h2 class="text-2xl font-semibold">About</h2>
+          <div class="mt-4 text-slate-600 max-w-3xl">I'm a frontend developer focused on building high quality web apps. I care about performance, accessibility and clean design. When I'm not coding, I enjoy photography and open-source.</div>
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="p-4 bg-white border rounded-lg">
+              <div class="text-sm text-slate-500">Experience</div>
+              <div class="mt-2 font-semibold">3+ years</div>
+            </div>
+            <div class="p-4 bg-white border rounded-lg">
+              <div class="text-sm text-slate-500">Location</div>
+              <div class="mt-2 font-semibold">City, Country</div>
+            </div>
+            <div class="p-4 bg-white border rounded-lg">
+              <div class="text-sm text-slate-500">Email</div>
+              <div class="mt-2 font-semibold">you@example.com</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="border-t">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h2 class="text-2xl font-semibold">Projects</h2>
+          <p class="mt-2 text-slate-600 max-w-2xl">Selected projects showcasing frontend, UI and performance work.</p>
+
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Project Card -->
+            <article class="p-4 border rounded-lg hover:shadow">
+              <h3 class="font-semibold">Project One</h3>
+              <p class="mt-2 text-sm text-slate-500">A short description of the project and the main tech used.</p>
+              <div class="mt-4 flex items-center gap-3">
+                <a href="#" class="text-indigo-600 hover:underline">Live</a>
+                <a href="#" class="text-slate-500 hover:underline">Source</a>
+              </div>
+            </article>
+
+            <article class="p-4 border rounded-lg hover:shadow">
+              <h3 class="font-semibold">Project Two</h3>
+              <p class="mt-2 text-sm text-slate-500">Another project example that highlights frontend skills.</p>
+              <div class="mt-4 flex items-center gap-3">
+                <a href="#" class="text-indigo-600 hover:underline">Live</a>
+                <a href="#" class="text-slate-500 hover:underline">Source</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="border-t">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h2 class="text-2xl font-semibold">Skills</h2>
+          <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-sm">
+            <div class="p-3 bg-white border rounded">HTML</div>
+            <div class="p-3 bg-white border rounded">CSS</div>
+            <div class="p-3 bg-white border rounded">JavaScript</div>
+            <div class="p-3 bg-white border rounded">React</div>
+            <div class="p-3 bg-white border rounded">Tailwind</div>
+            <div class="p-3 bg-white border rounded">Vite</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="border-t">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h2 class="text-2xl font-semibold">Contact</h2>
+          <p class="mt-2 text-slate-600">Want to work together? Send a message.</p>
+
+          <form id="contactForm" class="mt-6 grid grid-cols-1 gap-4">
+            <div>
+              <label class="text-sm">Name</label>
+              <input name="name" required class="mt-1 block w-full rounded-md border px-3 py-2" />
+            </div>
+            <div>
+              <label class="text-sm">Email</label>
+              <input type="email" name="email" required class="mt-1 block w-full rounded-md border px-3 py-2" />
+            </div>
+            <div>
+              <label class="text-sm">Message</label>
+              <textarea name="message" rows="4" required class="mt-1 block w-full rounded-md border px-3 py-2"></textarea>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded">Send</button>
+              <div id="formStatus" class="text-sm text-slate-500"></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t mt-8">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-sm text-slate-500 flex items-center justify-between">
+        <div>© <span id="year"></span> Your Name</div>
+        <div class="flex items-center gap-3">
+          <a href="#" class="hover:text-indigo-600">GitHub</a>
+          <a href="#" class="hover:text-indigo-600">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
